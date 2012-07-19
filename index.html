@@ -15,6 +15,12 @@
 		#sidebar h2 { color: #FF7300; border: 0; padding: 0; text-shadow:none; }
 		#sidebar p { margin-bottom: 0; }
 	</style>
+
+	<style type="text/css" id="dynamicCSS">
+	.half-size{
+		width:50%;
+	}
+	</style>
 </head>
 <body>
 	<article>
@@ -201,6 +207,30 @@
 		</section>
 		<section class="slide">
 			<h2>Hands On</h2>
+
+			<div class="row">
+				<div class="span12">
+					<div id="example">
+						<div class="half-size">
+							This is an example box, use the css and html area below	to modify my content.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row push-down">
+				<div class="span6">
+					<h3>CSS</h3>
+					<pre><code class="css" contenteditable="true">.half-size{
+	width:50%;
+ }</code></pre>
+				</div>
+				<div class="span6">
+					<h3>HTML</h3>
+					<pre><code class="html" contenteditable="true">&lt;div class="half-size">
+	This is an example box, use the css and html area below to modify my content.
+&lt;/div></code></pre>
+				</div>
+			</div>
 		</section>
 		<section class="slide">
 			<h2>Resources</h2>
