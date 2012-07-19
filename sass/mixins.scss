@@ -1,0 +1,6 @@
+@mixin gradient($dir, $color1, $color2) {
+	background-image: -webkit-linear-gradient($dir, $color1, $color2);
+	background-image:    -moz-linear-gradient($dir, $color1, $color2);
+	background-image:     -ms-linear-gradient($dir, $color1, $color2);
+	background-image:      -o-linear-gradient($dir, $color1, $color2);
+}

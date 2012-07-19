@@ -1,0 +1,96 @@
+@import "normalize";
+@import "core";
+@import "mixins";
+
+$orange: #FF7300;
+
+/**
+ * SASS for my deck.js theme.
+ *
+ * @author   Dave Widmer <dwidmer@bgsu.edu>
+ */
+body {
+	background-image: url('../images/crisp_paper_ruffles.png');
+	color: #333;
+}
+
+.deck-container {
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 1.75em;
+}
+
+.slide {
+	h1 {
+		font-size: 3.5em;
+	}
+}
+
+.csstransforms {
+	.slide {
+		h1 {
+			-moz-transform: none;
+			position: relative;
+			padding: 0;
+		}
+	}
+}
+
+.no-style {
+	list-style: none;
+}
+
+.unpadded {
+	padding: 0;
+}
+
+.padded {
+	padding: 1em;
+}
+
+.margined {
+	margin: 1em;
+}
+
+.unmargined {
+	margin: 0;
+}
+
+.rounded {
+	border-radius: 0.75em;
+}
+
+.call-out {
+	@include gradient(top, #FFF, #E7E7E7);
+	text-shadow: 1px 1px 0 #FFF;
+
+	&.bordered {
+		border-width: 0.25em;
+	}
+}
+
+.shadow {
+	box-shadow: 0 0 0.75em #999;
+	margin-bottom: 0.75em;
+}
+
+.float {
+	float: left;
+
+	&.right {
+		float: right;
+	}
+}
+
+.bgsu {
+	color: $orange;
+}
+
+.thin {
+	font-weight: 200;
+}
+
+.bordered {
+	border-width:1px;
+	border-style: solid;
+	border-color: #FFF;
+}
