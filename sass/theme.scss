@@ -78,14 +78,10 @@ h2 {
 .call-out {
 	@include gradient(top, #FFF, #E7E7E7);
 	text-shadow: 1px 1px 0 #FFF;
-
-	&.bordered {
-		border-width: 0.25em;
-	}
-}
-
-.shadow {
+	border: 0.25em solid #FFF;
+	border-radius: 0.75em;
 	box-shadow: 0 0 0.35em #999;
+	padding: 1em;
 }
 
 .float {
@@ -106,12 +102,6 @@ h2 {
 
 .thin {
 	font-weight: 200;
-}
-
-.bordered {
-	border-width:1px;
-	border-style: solid;
-	border-color: #FFF;
 }
 
 .absolute {
@@ -142,6 +132,10 @@ h2 {
 
 .text-right {
 	text-align:right;
+}
+
+.text-center {
+	text-align:center;
 }
 
 .vertical-margin {
@@ -181,4 +175,36 @@ blockquote {
 	padding: 0.5em 1em;
 	background-color: #FFF;
 	margin:0;
+}
+
+.show-grid {
+	&.row {
+		margin-bottom: 2em;
+	}
+	
+	[class*="span"] {
+		div {
+			background-color: hsla(360, 100%, 50%, 0.2);
+			padding: 0.25em;
+		}
+	}
+}
+
+.gray {
+	color: #666;
+}
+
+.lock-bottom-right {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 2em;
+}
+
+.large {
+	font-size: 2em;
+}
+
+.push-down {
+	margin-top:2em;
 }
