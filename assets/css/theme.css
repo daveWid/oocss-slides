@@ -225,6 +225,8 @@ html { height: 100%; }
 body { font-family: "Helvetica Neue", sans-serif; font-size: 24px; background-image: url("../images/crisp_paper_ruffles.png"); color: #333; }
 body > article { position: absolute; top: 0; left: 0; bottom: 0; right: 0; padding: 0 2em; }
 
+a { color: #4385db; }
+
 h1, h2, h3, h4, h5, h6 { margin-top: 0; text-shadow: 0.1em 0.1em 0 #FFF; }
 
 h1, h2, h6 { color: #4385db; }
@@ -234,6 +236,8 @@ h3, h4, h5 { color: #156f27; }
 h1 { font-size: 3em; }
 
 h2 { padding: 1em 0 3px; border-bottom: 4px solid #4385db; }
+
+li { line-height: 1.5; }
 
 .no-style { list-style: none; }
 
