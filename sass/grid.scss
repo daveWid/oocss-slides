@@ -1,0 +1,78 @@
+// Grid
+// =============
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.row {
+	width:100%;
+}
+
+.row:before,
+.row:after {
+	display: table;
+	content: "";
+}
+
+.row:after {
+	clear: both;
+}
+
+[class*="span"] {
+	float: left;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.span1 {
+	width: 8.333333333333%;
+}
+
+.span2 {
+	width: 16.666666666667%;
+}
+
+.span3 {
+	width: 25%;
+}
+
+.span4 {
+	width: 33.333333333333%;
+}
+
+.span5 {
+	width: 41.666666666667%;
+}
+
+.span6 {
+	width: 50%;
+}
+
+.span7 {
+	width: 58.333333333333%;;
+}
+
+.span8 {
+	width: 66.666666666667%;
+}
+
+.span9 {
+	width: 75%;
+}
+
+.span10 {
+	width: 83.333333333333%;
+}
+
+.span11 {
+	width: 91.666666666667%;
+}
+
+.span12 {
+	width: 100%;
+}
+

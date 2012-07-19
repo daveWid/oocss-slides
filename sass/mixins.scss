@@ -4,3 +4,15 @@
 	background-image:     -ms-linear-gradient($dir, $color1, $color2);
 	background-image:      -o-linear-gradient($dir, $color1, $color2);
 }
+
+@mixin box-sizing(){
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+@mixin translate($x, $y) {
+	   -moz-transform: translate($x, $y);
+	-webkit-transform: translate($x, $y);
+}

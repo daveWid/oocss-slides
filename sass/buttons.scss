@@ -1,0 +1,38 @@
+// Buttons
+// =========
+
+.button {
+	background-color:#248FE0;
+
+	display: inline-block;
+	font-size: 1.125em;
+	padding: 0.625em 1.375em;
+	box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3), 2px 2px 3px rgba(0,0,0, 0.25);
+	text-align: center;
+	text-decoration: none;
+	font-weight:bold;
+	cursor: pointer;
+	outline: none;
+	overflow: visible;
+	border:1px solid rgba(0,0,0,0.25);
+	color:#FFF;
+	text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
+
+	@include gradient(top, rgba(255,255,255, 0.2), rgba(255,255,255,0));
+}
+
+.button:active {
+	box-shadow:inset 0 0 5px 2px rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.3);
+}
+
+.button.black {
+	background-color: #333;
+}
+
+.button.green {
+	background-color: #17A122;
+}
+
+.button.red {
+	background-color:#D10000;
+}
