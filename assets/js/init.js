@@ -12,7 +12,7 @@
 		hljs.highlightBlock(e);
 	});
 
-	$('.livecode').livecode({
+	$.livecode({
 		callback: hljs.highlightBlock
 	});
 })(jQuery);
