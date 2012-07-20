@@ -227,7 +227,7 @@ body > article { position: absolute; top: 0; left: 0; bottom: 0; right: 0; paddi
 
 a { color: #4385db; }
 
-h1, h2, h3, h4, h5, h6 { margin-top: 0; text-shadow: 0.1em 0.1em 0 #FFF; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0; text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15); }
 
 h1, h2, h6 { color: #4385db; }
 
@@ -259,6 +259,8 @@ li { line-height: 1.5; }
 .bgsu { color: #FF7300; }
 
 .secondary { color: #156f27; }
+
+.primary { color: #4385db; }
 
 .thin { font-weight: 200; }
 
@@ -303,3 +305,11 @@ blockquote { border-left: 6px solid #156f27; padding: 0.5em 1em; background-colo
 
 .msu-title { text-shadow: none; text-transform: uppercase; color: #FFF; font-size: 17pt; font-family: "Gotham Book", "Helvetica Neue", sans-serif; font-weight: 200; margin-bottom: 0; }
 .msu-title strong { font-family: "Gotham Bold", "Helvetica Neue", sans-serif; font-weight: bold; }
+
+.margin-top { margin-top: 1em; }
+.margin-top.half { margin-top: 0.5em; }
+.margin-top.double { margin-top: 2em; }
+
+.fixed { position: fixed; left: 0; right: 0; }
+.fixed.top { top: 0; }
+.fixed.bottom { bottom: 0; }
