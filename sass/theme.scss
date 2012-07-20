@@ -216,3 +216,26 @@ blockquote {
 .push-down {
 	margin-top:2em;
 }
+
+.msu-masthead {
+	@include gradient(top, #0d2620, #1a493e);
+	border-bottom: 5px solid #548555;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.9);
+	padding: 1em;
+}
+
+.msu-title {
+	text-shadow: none;
+	text-transform:  uppercase;
+	color: #FFF;
+	font-size: 17pt;
+	font-family: "Gotham Book", "Helvetica Neue", sans-serif;
+	font-weight: 200;
+	margin-bottom: 0;
+
+	strong {
+		font-family: "Gotham Bold", "Helvetica Neue", sans-serif;
+		font-weight: bold;
+	}
+}
+
