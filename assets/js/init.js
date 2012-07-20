@@ -11,4 +11,8 @@
 	$('pre code').each( function(i, e){
 		hljs.highlightBlock(e);
 	});
+
+	$('.livecode').livecode({
+		callback: hljs.highlightBlock
+	});
 })(jQuery);
