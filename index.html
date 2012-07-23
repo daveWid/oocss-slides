@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="assets/css/github.css" />
 
 	<style type="text/css">
-		#sidebar { border: 1px solid #999; background-color: #E7E7E7; padding: 1em; margin:1em 0; }
+		#sidebar { background-color: #E7E7E7; padding: 1em; margin:1em 0; }
 		#sidebar h2 { color: #FF7300; border: 0; padding: 0; text-shadow:none; }
 		#sidebar p { margin-bottom: 0; }
 	</style>
@@ -35,7 +35,7 @@
 		<section class="slide">
 			<h2>Introduction</h2>
 
-			<div class="row slide">
+			<div class="row">
 				<div class="span3">
 					<img src="assets/images/sullivan.jpg" alt="Nichole Sullivan" />
 				</div>
@@ -57,49 +57,12 @@
 		<section class="slide">
 			<h2>Principal #1: Separate Structure and Skin</h2>
 
-			<div class="slide">
-				<pre><code class="html">&lt;img src="assets/images/nicholas.jpg" alt="Nicholas" /></code></pre>
-			</div>
-			<div class="row">
-				<div class="span1">&nbsp;</div>
-				<div class="span4 slide">
-					<img src="assets/images/nicholas.jpg" class="scale" alt="Nicholas" />
-				</div>
-				<div class="span2">&nbsp;</div>
-				<div class="span4 slide">
-					<img src="assets/images/nicholas.jpg" class="shadow-box scale" alt="Nicholas" />
-				</div>
-				<div class="span1">&nbsp;</div>
-			</div>
-			<div class="row">
-				<div class="span6 slide">
-					<h3 class="unmargined">CSS</h3>
-					<pre><code class="css">img {
-	border: 6px solid #FFF;
-	box-shadow: 0 0 1em #999;
-}</code></pre>
-				</div>
-				<div class="span6 slide">
-					<h3 class="unmargined">OOCSS</h3>
-					<pre><code class="css">.shadow-box {
-	border: 6px solid #FFF;
-	box-shadow: 0 0 1em #999;
-}</code></pre>
-				</div>
-			</div>
-			<div class="slide">
-				<pre><code class="html">&lt;img src="assets/images/nicholas.jpg" alt="Nicholas"<mark> class="shadow-box"</mark> /></code></pre>
-			</div>
-		</section>
-		<section class="slide">
-			<h2>Principal #2: Separate Container and Content</h2>
-
 			<div class="row">
 				<div class="span6 slide">
 					<h3 class="unmargined">HTML</h3>
 					<pre><code class="html">&lt;aside id="sidebar">
-	&lt;h2>Title&lt;/h2>
-	&lt;p>Content&lt;/p>
+  &lt;h2>Title&lt;/h2>
+  &lt;p>Content&lt;/p>
 &lt;/aside></code></pre>
 				</div>
 				<div class="span6 slide">
@@ -115,32 +78,77 @@
 			<div class="row push-down">
 				<div class="span4 slide">
 					<h3 class="unmargined">CSS</h3>
-					<pre><code class="css">#sidebar h2 {
-	color: #FF7300;
+					<pre><code class="css">#sidebar{
+  background-color: #E7E7E7;
+  padding: 1em;
+}
+#sidebar h2 {
+  color: #FF7300;
 }
 #sidebar p {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }</code></pre>
 				</div>
 				<div class="span4 slide">
 					<h3 class="unmargined text-center">HTML</h3>
-					<pre><code class="html">&lt;aside<strike> id="sidebar"</strike>>
-	&lt;h2<mark> class="orange"</mark>>Title&lt;/h2>
-	&lt;p<mark> class="no-bm"</mark>>Content&lt;/p>
+					<pre><code class="html">&lt;aside <del>id</del><ins>class</ins>="sidebar">
+  &lt;h2<ins> class="orange"</ins>>Title&lt;/h2>
+  &lt;p<ins> class="no-bm"</ins>>Content&lt;/p>
 &lt;/aside></code></pre>
 				</div>
 				<div class="span4 slide">
 					<h3 class="unmargined text-right">OOCSS</h3>
-					<pre><code class="css">.orange {
-	color: #FF7300;
+					<pre><code class="css">.sidebar{
+  background-color: #E7E7E7;
+  padding: 1em;
+}
+.orange {
+  color: #FF7300;
 }
 .no-bm {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }</code></pre>
 				</div>
 			</div>
+		</section>
+		<section class="slide">
+			<h2>Principal #2: Separate Container and Content</h2>
 
-			<h3 class="slide push-down text-center">So ummmm.... what can you do with this?</h3>
+			<div class="slide">
+				<pre><code class="html">&lt;div class="offspring">&lt;img src="assets/images/nicholas.jpg" alt="Nicholas" />&lt;/div></code></pre>
+			</div>
+			<div class="row">
+				<div class="span1">&nbsp;</div>
+				<div class="span4 slide">
+					<img src="assets/images/nicholas.jpg" class="scale" alt="Nicholas" />
+				</div>
+				<div class="span2">&nbsp;</div>
+				<div class="span4 slide">
+					<img src="assets/images/nicholas.jpg" class="shadow-box scale" alt="Nicholas" />
+				</div>
+				<div class="span1">&nbsp;</div>
+			</div>
+			<div class="row">
+				<div class="span6 slide">
+					<h3 class="unmargined">CSS</h3>
+					<pre><code class="css">.offspring img {
+  border: 6px solid #FFF;
+  box-shadow: 0 0 1em #999;
+}</code></pre>
+				</div>
+				<div class="span6 slide">
+					<h3 class="unmargined">OOCSS</h3>
+					<pre><code class="css">.shadow-box {
+  border: 6px solid #FFF;
+  box-shadow: 0 0 1em #999;
+}</code></pre>
+				</div>
+			</div>
+			<div class="slide">
+				<pre><code class="html">&lt;div class="offspring">
+  &lt;img src="assets/images/nicholas.jpg" alt="Nicholas"<ins> class="shadow-box"</ins> />
+&lt;/div></code></pre>
+			</div>
 		</section>
 		<section class="slide">
 			<h2>Grids <small class="gray">(.row .span#)</small></h2>
@@ -234,32 +242,40 @@
 		<section class="slide">
 			<h2>Resources</h2>
 
-			<h3 class="slide">Learn More</h3>
+			<div class="slide">
+				<h3>Learn More</h3>
 
-			<ul>
-				<li class="slide"><a href="http://oocss.org/">oocss.org</a></li>
-				<li class="slide"><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">An Introduction to OOCSS</a></li>
-			</ul>
+				<ul>
+					<li><a href="http://oocss.org/">oocss.org</a></li>
+					<li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">An Introduction to OOCSS</a></li>
+				</ul>
+			</div>
 
-			<h3 class="slide">Libraries</h3>
-			<ul>
-				<li class="slide"><a href="https://github.com/stubbornella/oocss">OOCSS</a></li>
-				<li class="slide"><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></li>
-				<li class="slide"><a href="http://960.gs/">960 Grid</a></li>
-			</ul>
+			<div class="slide">
+				<h3>Libraries</h3>
+				<ul>
+					<li><a href="https://github.com/stubbornella/oocss">OOCSS</a></li>
+					<li><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></li>
+					<li><a href="http://960.gs/">960 Grid</a></li>
+				</ul>
+			</div>
 
-			<h3 class="slide">Shameless Plug</h3>
-			<ul>
-				<li class="slide"><a href="https://github.com/daveWid/oocss">My OOCSS Library</a>
-					<small><mark>In heavy development, help me out!</mark></small>
-				</li>
-			</ul>
+			<div class="slide">
+				<h3>Shameless Plug</h3>
+				<ul>
+					<li><a href="https://github.com/daveWid/oocss">My OOCSS Library</a>
+						<small><mark>In heavy development, help me out!</mark></small>
+					</li>
+				</ul>
+			</div>
 
-			<h3 class="slide">Helpers</h3>
-			<ul>
-				<li class="slide"><a href="http://sass-lang.com/">SASS</a></li>
-				<li class="slide"><a href="http://lesscss.org/">LESS</a></li>
-			</ul>
+			<div class="slide">
+				<h3>Helpers</h3>
+				<ul>
+					<li><a href="http://sass-lang.com/">SASS</a></li>
+					<li><a href="http://lesscss.org/">LESS</a></li>
+				</ul>
+			</div>
 		</section>
 		<section class="slide">
 			<h1 class="vcenter">Questions? Comments?</h1>
