@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Object Oriented CSS</title>
+
+	<meta charset="utf-8">
+	<meta name="author" content="Dave Widmer">
+
+	<link rel="stylesheet" href="assets/css/deck.menu.css" />
+	<link rel="stylesheet" href="assets/css/theme.css" />
+	<link rel="stylesheet" href="assets/css/github.css" />
+
+	<style type="text/css">
+		#sidebar { background-color: #E7E7E7; padding: 1em; margin:1em 0; }
+		#sidebar h2 { color: #FF7300; border: 0; padding: 0; text-shadow:none; }
+		#sidebar p { margin-bottom: 0; }
+	</style>
+
+	<style type="text/css" id="dynamicCSS"></style>
+</head>
+<body>
+	<article>
+		<section class="slide">
+			<h1 class="vcenter">CSS Isn't Object Oriented!</h1>
+
+			<div class="call-out lock-bottom-right">
+				<ul class="no-style unpadded unmargined">
+					<li>Dave Widmer</li>
+					<li>Web Applications Developer - <strong class="bgsu">BG</strong><span class="thin">SU</span></li>
+					<li>dwidmer@bgsu.edu</li>
+					<li>@davewidmer</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>Introduction</h2>
+
+			<div class="row">
+				<div class="span3">
+					<img src="assets/images/sullivan.jpg" alt="Nichole Sullivan" />
+				</div>
+				<div class="span9">
+					<blockquote>
+						<p>Basically, a CSS “object” is a repeating visual pattern, which
+							can be abstracted into an independent snippet of HTML, CSS,
+							and possibly JavaScript. Once created, an object can then be
+							reused throughout a site.</p>
+
+						<p><em>- Nicole Sullivan (<a href="https://github.com/stubbornella/oocss/wiki">OOCSS Wiki</a>)</em>
+					</blockquote>
+				</div>
+			</div>
+
+			<h3 class="slide text-center large push-down">Uses the class attribute</h3>
+			<h4 class="slide text-center large primary">... as a guide not a rule</h4>
+		</section>
+		<section class="slide">
+			<h2>Principal #1: Separate Structure and Skin</h2>
+
+			<div class="row">
+				<div class="span6 slide">
+					<h3 class="unmargined">HTML</h3>
+					<pre><code class="html">&lt;aside id="sidebar">
+  &lt;h2>Title&lt;/h2>
+  &lt;p>Content&lt;/p>
+&lt;/aside></code></pre>
+				</div>
+				<div class="span6 slide">
+					<h3 class="unmargined">Output</h3>
+
+					<aside id="sidebar">
+						<h2>Title</h2>
+						<p>Content</p>
+					</aside>
+				</div>
+			</div>
+
+			<div class="row push-down">
+				<div class="span4 slide">
+					<h3 class="unmargined">CSS</h3>
+					<pre><code class="css">#sidebar{
+  background-color: #E7E7E7;
+  padding: 1em;
+}
+#sidebar h2 {
+  color: #FF7300;
+}
+#sidebar p {
+  margin-bottom: 0;
+}</code></pre>
+				</div>
+				<div class="span4 slide">
+					<h3 class="unmargined text-center">HTML</h3>
+					<pre><code class="html">&lt;aside <del>id</del><ins>class</ins>="sidebar">
+  &lt;h2<ins> class="orange"</ins>>Title&lt;/h2>
+  &lt;p<ins> class="no-bm"</ins>>Content&lt;/p>
+&lt;/aside></code></pre>
+				</div>
+				<div class="span4 slide">
+					<h3 class="unmargined text-right">OOCSS</h3>
+					<pre><code class="css">.sidebar{
+  background-color: #E7E7E7;
+  padding: 1em;
+}
+.orange {
+  color: #FF7300;
+}
+.no-bm {
+  margin-bottom: 0;
+}</code></pre>
+				</div>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>Principal #2: Separate Container and Content</h2>
+
+			<div class="slide">
+				<pre><code class="html">&lt;div class="offspring">&lt;img src="assets/images/nicholas.jpg" alt="Nicholas" />&lt;/div></code></pre>
+			</div>
+			<div class="row">
+				<div class="span1">&nbsp;</div>
+				<div class="span4 slide">
+					<img src="assets/images/nicholas.jpg" class="scale" alt="Nicholas" />
+				</div>
+				<div class="span2">&nbsp;</div>
+				<div class="span4 slide">
+					<img src="assets/images/nicholas.jpg" class="shadow-box scale" alt="Nicholas" />
+				</div>
+				<div class="span1">&nbsp;</div>
+			</div>
+			<div class="row">
+				<div class="span6 slide">
+					<h3 class="unmargined">CSS</h3>
+					<pre><code class="css">.offspring img {
+  border: 6px solid #FFF;
+  box-shadow: 0 0 1em #999;
+}</code></pre>
+				</div>
+				<div class="span6 slide">
+					<h3 class="unmargined">OOCSS</h3>
+					<pre><code class="css">.shadow-box {
+  border: 6px solid #FFF;
+  box-shadow: 0 0 1em #999;
+}</code></pre>
+				</div>
+			</div>
+			<div class="slide">
+				<pre><code class="html">&lt;div class="offspring">
+  &lt;img src="assets/images/nicholas.jpg" alt="Nicholas"<ins> class="shadow-box"</ins> />
+&lt;/div></code></pre>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>Grids <small class="gray">(.row .span#)</small></h2>
+
+			<div class="row show-grid slide">
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+				<div class="span1"><div>.span1</div></div>
+			</div>
+
+			<div class="row show-grid slide">
+				<div class="span2"><div>.span2</div></div>
+				<div class="span2"><div>.span2</div></div>
+				<div class="span2"><div>.span2</div></div>
+				<div class="span2"><div>.span2</div></div>
+				<div class="span2"><div>.span2</div></div>
+				<div class="span2"><div>.span2</div></div>
+			</div>
+
+			<div class="row show-grid slide">
+				<div class="span3"><div>.span3</div></div>
+				<div class="span3"><div>.span3</div></div>
+				<div class="span6"><div>.span6</div></div>
+			</div>
+
+			<div class="row show-grid slide">
+				<div class="span9"><div>.span9</div></div>
+				<div class="span3"><div>.span3</div></div>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>Buttons <small class="gray">(class="button")</small></h2>
+
+			<div class="row slide">
+				<div class="span2 margin-top half">
+					<a href="#test" class="button">Link</a>
+				</div>
+				<div class="span10">
+					<pre><code class="html">&lt;a href="#test" class="button">Link&lt;/a></code></pre>
+				</div>
+			</div>
+
+			<div class="row slide push-down">
+				<div class="span2 margin-top half">
+					<input type="submit" class="button red rounded" value="Submit" />
+				</div>
+				<div class="span10">
+					<pre><code class="html">&lt;input type="submit" class="button red rounded" value="Submit" /></code></pre>
+				</div>
+			</div>
+
+			<div class="row slide push-down">
+				<div class="span2 margin-top half">
+					<button class="button black">Button</button>
+				</div>
+				<div class="span10">
+					<pre><code class="html">&lt;button class="button black">Button&lt;/button></code></pre>
+				</div>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>UI Elements</h2>
+
+			<div class="slide">
+				<h3>Messages <small class="gray">(class="message")</small></h3>
+
+				<div class="row">
+					<div class="span6">
+						<div class="message success">
+							This was a success!
+						</div>
+					</div>
+					<div class="span6"><pre class="margin-top half"><code class="html">&lt;div class="message success"></code></pre>
+					</div>
+				</div>
+				<div class="row push-down half">
+					<div class="span6">
+						<div class="message error">
+							Ooops, error time!
+						</div>
+					</div>
+					<div class="span6"><pre class="margin-top half"><code class="html">&lt;div class="message error"></code></pre>
+					</div>
+				</div>
+				<div class="row push-down half">
+					<div class="span6">
+						<div class="message info">
+							Here is some info you want to look at...
+						</div>
+					</div>
+					<div class="span6"><pre class="margin-top half"><code class="html">&lt;div class="message info"></code></pre>
+					</div>
+				</div>
+			</div>
+
+			<div class="slide push-down">
+				<h3>Pagination <small class="gray">(class="pagination")</small></h3>
+
+				<div class="row">
+					<div class="span6">
+						<ul class="pagination">
+							<li class="disabled"><a href="#">«</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">»</a></li>
+						</ul>
+					</div>
+					<div class="span6">
+						<pre><code class="html">&lt;ul class="pagination"></code></pre>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="span6">
+						<ul class="pagination collapsed">
+							<li class="disabled"><a href="#">«</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">»</a></li>
+						</ul>
+					</div>
+					<div class="span6">
+						<pre><code class="html">&lt;ul class="pagination collapsed"></code></pre>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>Hands On</h2>
+
+			<div class="row">
+				<div class="span12">
+					<div id="example"></div>
+				</div>
+			</div>
+			<div class="row push-down">
+				<div class="span6">
+					<h3>CSS</h3>
+					<pre><code class="css" data-live-code="#dynamicCSS">.example{}</code></pre>
+				</div>
+				<div class="span6">
+					<h3>HTML</h3>
+					<pre><code class="html" data-live-code="#example">&lt;div class="msu-masthead">
+  &lt;h1 class="msu-title">&lt;strong>Michigan State&lt;/strong> University&lt;/h1>
+&lt;/div></code></pre>
+				</div>
+			</div>
+		</section>
+		<section class="slide">
+			<h2>Resources</h2>
+
+			<div class="slide">
+				<h3>Learn More</h3>
+
+				<ul>
+					<li><a href="http://oocss.org/">oocss.org</a></li>
+					<li><a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">An Introduction to OOCSS</a></li>
+				</ul>
+			</div>
+
+			<div class="slide">
+				<h3>Libraries</h3>
+				<ul>
+					<li><a href="https://github.com/stubbornella/oocss">OOCSS</a></li>
+					<li><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></li>
+					<li><a href="http://960.gs/">960 Grid</a></li>
+				</ul>
+			</div>
+
+			<div class="slide">
+				<h3>Shameless Plug</h3>
+				<ul>
+					<li><a href="https://github.com/daveWid/oocss">My OOCSS Library</a>
+						<small><mark>In heavy development, help me out!</mark></small>
+					</li>
+				</ul>
+			</div>
+
+			<div class="slide">
+				<h3>Helpers</h3>
+				<ul>
+					<li><a href="http://sass-lang.com/">SASS</a></li>
+					<li><a href="http://lesscss.org/">LESS</a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide">
+			<h1 class="vcenter">Questions? Comments?</h1>
+		</section>
+	</article>
+
+	<!-- Load up Deck.js -->
+	<script src="assets/js/modernizr.custom.js"></script>
+	<script src="assets/js/jquery-1.7.min.js"></script>
+	<script src="assets/js/deck.core.js"></script>
+	<script src="assets/js/deck.hash.js"></script>
+	<script src="assets/js/deck.menu.js"></script>
+	<script src="assets/js/highlight.pack.js"></script>
+	<script src="assets/js/jquery.livecode.min.js"></script>
+	<script src="assets/js/init.js"></script>
+
+</body>
+</html>
